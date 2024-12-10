@@ -11,7 +11,7 @@ router = Router()
 async def cmd_start(message: Message):
     await message.answer(f"Hello world")
 
-@router.message_handler(commands=['start'])
+'''@router.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
     kb = [
         [
@@ -22,7 +22,7 @@ async def send_welcome(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
 
     await message.reply("Привет!\nЯ Эхобот от Skillbox!\nОтправь мне любое сообщение, а я тебе обязательно отвечу.",
-                        reply_markup=keyboard)
+                        reply_markup=keyboard)'''
 
 @router.message(Command("тест"))
 async def cmd_start(message: Message):
