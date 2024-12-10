@@ -20,7 +20,7 @@ async def send_welcome(message: types.Message):
         resize_keyboard=True,
         input_field_placeholder="Выберите способ подачи"
     )
-    await message.answer("Как подавать котлеты?", reply_markup=keyboard)
+    await message.answer("Как подавать котлеты??", reply_markup=keyboard)
 
 @router.message(Command("тест"))
 async def cmd_start(message: Message):
