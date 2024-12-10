@@ -11,14 +11,16 @@ router = Router()
 async def send_welcome(message: types.Message):
     kb = [
         [
-            types.KeyboardButton(text="Узнать погоду"),
-            types.KeyboardButton(text="А хта это такэ?")
+            types.KeyboardButton(text="С пюрешкой"),
+            types.KeyboardButton(text="Без пюрешки")
         ],
     ]
-    keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
-
-    await message.reply("Привет!\nЯ Эхобот от Skillbox!\nОтправь мне любое сообщение, а я тебе обязательно отвечу.",
-                        reply_markup=keyboard)
+    keyboard = types.ReplyKeyboardMarkup(
+        keyboard=kb,
+        resize_keyboard=True,
+        input_field_placeholder="Выберите способ подачи"
+    )
+    await message.answer("Как подавать котлеты?", reply_markup=keyboard)
 
 @router.message(Command("тест"))
 async def cmd_start(message: Message):
